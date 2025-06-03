@@ -51,8 +51,8 @@ while True:
         pdf_files = pdf_paths_str.split(';')
 
         for pdf_path in pdf_files:
-            raw_text = extract_text_from_pdf(pdf_path, use_generic, use_pdfplumber, use_ocr)
-            text, suffixes = clean_text(raw_text, newline, hyphen, doublespace, paragraph)
+            raw_text, suffixes = extract_text_from_pdf(pdf_path, use_generic, use_pdfplumber, use_ocr)
+            text, suffixes = clean_text(raw_text, newline, hyphen, doublespace, paragraph, suffixes)
 
             suffixes += ".docx"
             output_file = pdf_path.replace(".pdf", suffixes)
